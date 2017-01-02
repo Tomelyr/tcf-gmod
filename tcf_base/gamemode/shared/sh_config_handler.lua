@@ -22,8 +22,10 @@ function GM:Config_AddWeapon(weptype, team, ent, damage, accuracy, firerate, lev
 		return
 	end
 	if team == 1 then
-		GM:Config_AddWeapon(weptype, 2, ent, damage, accuracy, firerate, level)
-		GM:Config_AddWeapon(weptype, 3, ent, damage, accuracy, firerate, level)
+		for k,v in pairs(#team.GetAllTeams()) do
+			if k == 1 then continue end
+			GM:Config_AddWeapon(weptype, k, ent, damage, accuracy, firerate, level)
+		end
 		return
 	end
 	local weptbl = weapons.Get(ent)

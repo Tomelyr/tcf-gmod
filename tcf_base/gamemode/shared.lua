@@ -87,7 +87,7 @@ GameType[6] = { name = "Random", icon = "materials/gametype/random-icon.png"}
 /* usage of GM:Config_AddWeapon(weptype, team, ent, damage, accuracy, firerate, level)
 
 weptype = 1 for Primary or 2 for Secondary
-team = 2 for Team 1, 3 for Team 2.
+team = 1 for all Teams, 2 for Team 1, 3 for Team 2.
 ent = classname of SWEP
 damage = This and the following two are purely cosmetic for you to show players the weapon's stats. 
 accuracy = See above.
@@ -96,14 +96,10 @@ level = The level required to use the weapon. 0 is always available.
 
 */
 
-GM:Config_AddWeapon(1,3,"weapon_ar2",5,10,1,0)
-GM:Config_AddWeapon(1,3,"weapon_smg1",3,3,8,5)
-GM:Config_AddWeapon(1,2,"weapon_smg1",5,10,1,0)
-GM:Config_AddWeapon(1,2,"weapon_ar2",3,3,8,5)
-GM:Config_AddWeapon(1,3,"weapon_pistol",5,10,1,0)
-GM:Config_AddWeapon(1,3,"weapon_357",3,3,8,5)
-GM:Config_AddWeapon(1,2,"weapon_pistol",5,10,1,0)
-GM:Config_AddWeapon(1,2,"weapon_357",3,3,8,5)
+GM:Config_AddWeapon(1,1,"weapon_ar2",5,10,1,0)
+GM:Config_AddWeapon(1,1,"weapon_smg1",3,3,8,5)
+GM:Config_AddWeapon(1,1,"weapon_pistol",5,10,1,0)
+GM:Config_AddWeapon(1,1,"weapon_357",3,3,8,5)
 				
 -- Spawn locations for both teams during all 3 round types.
 Location = {}
