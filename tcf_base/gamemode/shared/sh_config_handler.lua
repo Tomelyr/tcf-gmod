@@ -21,6 +21,11 @@ function GM:Config_AddWeapon(weptype, team, ent, damage, accuracy, firerate, lev
 		MsgN("[TCF] Weapon could not be added: " .. ent)
 		return
 	end
+	if team == 1 then
+		GM:Config_AddWeapon(weptype, 2, ent, damage, accuracy, firerate, level)
+		GM:Config_AddWeapon(weptype, 3, ent, damage, accuracy, firerate, level)
+		return
+	end
 	local weptbl = weapons.Get(ent)
 	Weapons[#Weapons + 1] = {weptype = weptype,
 							team = team, entname = ent or "",
