@@ -1,3 +1,19 @@
+function GM:Initialize()
+	MsgN("SERVER: start network string memes")
+	util.AddNetworkString( 'open_teammenu' )
+	util.AddNetworkString( 'open_settings' )
+	util.AddNetworkString( 'open_tutorial' )
+	util.AddNetworkString( 'open_loadout' )
+	util.AddNetworkString( 'SetTeam' )
+	util.AddNetworkString( 'playsong' )
+	MsgN("SERVER: end network string memes, start global inits")
+   
+	SetGlobalInt( "GameState", 1 ) -- 1/rest 2/prep 3/battle
+	SetGlobalInt( "StateStartTime", RealTime())
+	SetGlobalString( "GameTypeSelected", nil)
+	MsgN("SERVER: end global inits")
+   
+end
 local round = {}
 -- Variables
 round.PrepTime	= 30	-- 30 second prep
