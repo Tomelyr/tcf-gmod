@@ -22,15 +22,15 @@ function GM:Config_AddWeapon(weptype, team, ent, damage, accuracy, firerate, lev
 		return
 	end
 	local weptbl = weapons.Get(ent)
-	Weapons[#Weapons + 1] = {weptype = weptype, -- 1 for Primary, 2 for Secondary
-				team = team, -- 2 for Team 1, 3 for Team 2.
-				entname = ent or "", -- The entity class of the weapon.
-				display = weptbl.PrintName or weptbl.ClassName or "" , -- The display name of the weapon on the loadout screen.
-				model = weptbl.WorldModel or nil, -- The icon model of the weapon on the loadout screen.
-				damage = damage or 0, -- This and the following two are purely cosmetic for you to show players the weapon's stats.
-				accuracy = accuracy or 0, -- See above.
-				firerate = firerate or 0, -- See above.
-				level = level or 0} -- The level required to use the weapon. 0 is always available.
+	Weapons[#Weapons + 1] = {weptype = weptype,
+							team = team, entname = ent or "",
+							display = weptbl.PrintName or weptbl.ClassName or "" ,
+							model = weptbl.WorldModel or nil,
+							damage = damage or 0,
+							accuracy = accuracy or 0,
+							firerate = firerate or 0,
+							level = level or 0
+							}
 end
 
 /**
