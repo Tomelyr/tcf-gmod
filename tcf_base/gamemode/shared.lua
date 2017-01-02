@@ -84,86 +84,26 @@ GameType[4] = { name = Config["TeaPartyName"], icon = "materials/gametype/tp-ico
 GameType[5] = { name = "VIP", icon = "materials/gametype/vip-icon.png"}
 GameType[6] = { name = "Random", icon = "materials/gametype/random-icon.png"}
 
+/* usage of GM:Config_AddWeapon(weptype, team, ent, damage, accuracy, firerate, level)
 
-Weapons = {}
--- When adding new weapons, ensure the index stays in order and no numbers are skipped.
-Weapons[1] = {weptype = 1, -- 1 for Primary, 2 for Secondary
-				team = 3, -- 2 for Team 1, 3 for Team 2.
-				entname = "weapon_ar2", -- The entity class of the weapon.
-				display = "AR2", -- The display name of the weapon on the loadout screen.
-				model = "models/weapons/w_IRifle.mdl", -- The icon model of the weapon on the loadout screen.
-				damage = 5, -- This and the following two are purely cosmetic for you to show players the weapon's stats.
-				accuracy = 10, -- See above.
-				firerate = 1, -- See above.
-				level = 0} -- The level required to use the weapon. 0 is always available.
-Weapons[2] = {weptype = 1, 
-				team = 3, 
-				entname = "weapon_smg1", 
-				display = "SMG", 
-				model = "models/weapons/w_smg1.mdl", 
-				damage = 3, 
-				accuracy = 3, 
-				firerate = 8, 
-				level = 5}
+weptype = 1 for Primary or 2 for Secondary
+team = 2 for Team 1, 3 for Team 2.
+ent = classname of SWEP
+damage = This and the following two are purely cosmetic for you to show players the weapon's stats. 
+accuracy = See above.
+firerate = See above.
+level = The level required to use the weapon. 0 is always available.
 
-Weapons[3] = {weptype = 1, 
-				team = 2, 
-				entname = "weapon_smg1", 
-				display = "SMG", 
-				model = "models/weapons/w_smg1.mdl", 
-				damage = 5, 
-				accuracy = 10, 
-				firerate = 1, 
-				level = 0}
-Weapons[4] = {weptype = 1, 
-				team = 2, 
-				entname = "weapon_ar2",
-				display = "AR2",
-				model = "models/weapons/w_IRifle.mdl",
-				damage = 3, 
-				accuracy = 3,
-				firerate = 8, 
-				level = 5}
+*/
 
-Weapons[5] = {weptype = 2, 
-				team = 3, 
-				entname = "weapon_pistol", 
-				display = "Pistol", 
-				model = "models/weapons/w_Pistol.mdl", 
-				damage = 5, 
-				accuracy = 10, 
-				firerate = 1, 
-				level = 0}
-Weapons[6] = {weptype = 2, 
-				team = 3, 
-				entname = "weapon_357", 
-				display = ".357 Revolver", 
-				model = "models/weapons/w_357.mdl", 
-				damage = 3, 
-				accuracy = 3, 
-				firerate = 8, 
-				level = 5}
-
-
-Weapons[7] = {weptype = 2, 
-				team = 2, 
-				entname = "weapon_pistol", 
-				display = "Pistol", 
-				model = "models/weapons/w_Pistol.mdl", 
-				damage = 5, 
-				accuracy = 10, 
-				firerate = 1, 
-				level = 0}
-Weapons[8] = {weptype = 2, 
-				team = 2, 
-				entname = "weapon_357", 
-				display = ".357 Revolver", 
-				model = "models/weapons/w_357.mdl", 
-				damage = 3, 
-				accuracy = 3, 
-				firerate = 8, 
-				level = 5}
-
+GM:Config_AddWeapon(1,3,"weapon_ar2",5,10,1,0)
+GM:Config_AddWeapon(1,3,"weapon_smg1",3,3,8,5)
+GM:Config_AddWeapon(1,2,"weapon_smg1",5,10,1,0)
+GM:Config_AddWeapon(1,2,"weapon_ar2",3,3,8,5)
+GM:Config_AddWeapon(1,3,"weapon_pistol",5,10,1,0)
+GM:Config_AddWeapon(1,3,"weapon_357",3,3,8,5)
+GM:Config_AddWeapon(1,2,"weapon_pistol",5,10,1,0)
+GM:Config_AddWeapon(1,2,"weapon_357",3,3,8,5)
 				
 -- Spawn locations for both teams during all 3 round types.
 Location = {}
@@ -193,35 +133,35 @@ Objectives[1] = {pos = Vector(-759.893005, -48.941532, 160.737976), letter = "B"
 Objectives[3] = {pos = Vector(59.757538, -1851.403320, 134.939987), letter = "C"}
 Objectives[4] = {pos = Vector(124.558128, -5437.647949, 219.013824), letter = "D"}
 
-TeaCrates = {}
 -- All the objectives for Tea Party(or whatever you rename it). Feel free to add/remove as many as you like, as long as there is at least one on the map.
-TeaCrates[1] = {pos = Vector(557.825806, -5619.362793, 249.031250)}
-TeaCrates[2] = {pos = Vector(547.544678, -5846.391113, 249.031250)}
-TeaCrates[3] = {pos = Vector(345.031311, -5957.604004, 249.031250)}
+-- Todo: move that into the Gamemodes
+GM:Config_AddTeaCrate(Vector(557.825806, -5619.362793, 249.031250))
+GM:Config_AddTeaCrate(Vector(547.544678, -5846.391113, 249.031250))
+GM:Config_AddTeaCrate(Vector(345.031311, -5957.604004, 249.031250))
 
-TeaCrates[4] = {pos = Vector(-383.222351, -5654.589355, 249.031250)}
-TeaCrates[5] = {pos = Vector(-464.142975, -5384.095215, 249.031250)}
-TeaCrates[6] = {pos = Vector(-687.777710, -5578.760254, 249.031250)}
+GM:Config_AddTeaCrate(Vector(-383.222351, -5654.589355, 249.031250))
+GM:Config_AddTeaCrate(Vector(-464.142975, -5384.095215, 249.031250))
+GM:Config_AddTeaCrate(Vector(-687.777710, -5578.760254, 249.031250))
 
-TeaCrates[7] = {pos = Vector(13.822784, -2401.628662, 162.782272)}
-TeaCrates[8] = {pos = Vector(-86.861954, -2416.200928, 164.113464)}
-TeaCrates[9] = {pos = Vector(-60.340714, -2292.388916, 164.673431)}
+GM:Config_AddTeaCrate(Vector(13.822784, -2401.628662, 162.782272))
+GM:Config_AddTeaCrate(Vector(-86.861954, -2416.200928, 164.113464))
+GM:Config_AddTeaCrate(Vector(-60.340714, -2292.388916, 164.673431))
 
-TeaCrates[10] = {pos = Vector(-1290.126099, -1114.311646, 192.213455)}
-TeaCrates[11] = {pos = Vector(-1111.859131, -1089.209839, 198.177856)}
-TeaCrates[12] = {pos = Vector(-1188.244629, -863.862427, 210.978821)}
+GM:Config_AddTeaCrate(Vector(-1290.126099, -1114.311646, 192.213455))
+GM:Config_AddTeaCrate(Vector(-1111.859131, -1089.209839, 198.177856))
+GM:Config_AddTeaCrate(Vector(-1188.244629, -863.862427, 210.978821))
 
-TeaCrates[13] = {pos = Vector(-1116.227539, -228.156967, 220.343048)}
-TeaCrates[14] = {pos = Vector(-831.201050, -16.967257, 215.175766)}
-TeaCrates[15] = {pos = Vector(-541.809692, -4.899796, 226.122406)}
+GM:Config_AddTeaCrate(Vector(-1116.227539, -228.156967, 220.343048))
+GM:Config_AddTeaCrate(Vector(-831.201050, -16.967257, 215.175766))
+GM:Config_AddTeaCrate(Vector(-541.809692, -4.899796, 226.122406))
 
-TeaCrates[16] = {pos = Vector(-780.686218, 2537.644531, 263.383484)}
-TeaCrates[17] = {pos = Vector(-615.908508, 2514.665283, 284.019562)}
-TeaCrates[18] = {pos = Vector(-728.508057, 2163.985107, 304.579559)}
+GM:Config_AddTeaCrate(Vector(-780.686218, 2537.644531, 263.383484))
+GM:Config_AddTeaCrate(Vector(-615.908508, 2514.665283, 284.019562))
+GM:Config_AddTeaCrate(Vector(-728.508057, 2163.985107, 304.579559))
 
-TeaCrates[19] = {pos = Vector(923.803833, 3431.851563, 264.812592)}
-TeaCrates[20] = {pos = Vector(553.439331, 3409.010010, 266.337585)}
-TeaCrates[21] = {pos = Vector(734.179993, 3101.103516, 263.925964)}
+GM:Config_AddTeaCrate(Vector(923.803833, 3431.851563, 264.812592))
+GM:Config_AddTeaCrate(Vector(553.439331, 3409.010010, 266.337585))
+GM:Config_AddTeaCrate(Vector(734.179993, 3101.103516, 263.925964))
 
 Rank = {}
 -- Ensure these playermodels are set to the ones you want to use for gameplay.
