@@ -7,7 +7,7 @@ TeaCrates = TeaCrates or {}
  *
  * param 	integer $weptype	Primary or Secondary check
  * param 	integer $team		TeamID for later use
- * param 	string	 $ent 		classname of swep ent
+ * param 	string	$ent 		classname of swep ent
  * param 	integer $damage 	cosmetic number for UI, defaults to 0
  * param 	integer $accuracy 	cosmetic number for UI, defaults to 0
  * param 	integer $firerate 	cosmetic number for UI, defaults to 0
@@ -22,7 +22,7 @@ function GM:Config_AddWeapon(weptype, team, ent, damage, accuracy, firerate, lev
 		return
 	end
 	if team == 1 then
-		for k,v in pairs(#team.GetAllTeams()) do
+		for k,v in pairs(team.GetAllTeams()) do
 			if k == 1 then continue end
 			GM:Config_AddWeapon(weptype, k, ent, damage, accuracy, firerate, level)
 		end
