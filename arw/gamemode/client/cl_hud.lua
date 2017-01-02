@@ -7,7 +7,7 @@ local fVisualHealth = 0
 
 local smooth = 0
 
-function hud()
+function GM:HUDPaint()
 
 ---------------------------------------------------------------
 //                     EXP BAR                               \\
@@ -193,16 +193,15 @@ function hud()
 		draw.SimpleText("0 - Close", "Basic_Font_Screen", ScrW() - 120, 300 + 180, Color(255,255,255), TEXT_ALIGN_CENTER)
 	end
 end
-hook.Add("HUDPaint", "TCFHud", hud) 
 
 -- Hide hud --
-function hidehud(name)
+function GM:HUDShouldDraw(name)
 	for k, v in pairs({"CHudHealth", "CHudBattery", "CHudAmmo", "CHudSecondaryAmmo"}) do
 		if name == v then return false end
 	end
 end
-hook.Add("HUDShouldDraw", "HideDefaultHud", hidehud)
 
-hook.Add("HUDDrawTargetID", "HideNameHP", function() return false end)
-
+function GM:HUDDrawTargetID()
+	return false
+end
 
