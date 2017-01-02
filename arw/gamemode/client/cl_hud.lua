@@ -8,6 +8,8 @@ local fVisualHealth = 0
 local smooth = 0
 
 function GM:HUDPaint()
+	local sDraw = hook.Call("HUDShouldDraw", GAMEMODE, "TCF_HUD")
+	if sDraw == false then return end
 
 ---------------------------------------------------------------
 //                     EXP BAR                               \\
