@@ -3,3 +3,5 @@ GM.Author 	= "Senpai Noodles and Iamgoofball"
 GM.Email 	= "N/A"
 GM.Website 	= "N/A"
 DeriveGamemode( "base" )
+
+GM.Config = GM.Config or {}
