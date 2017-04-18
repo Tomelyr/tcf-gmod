@@ -12,7 +12,7 @@ end
 local function loadModules()
 	local folder = "modules/"
 	
-	local _, folders = file.Find(folder .. "*", "LUA")
+	local _, folders = file.Find(folder .. "*", "LUA)
 	MsgN("[TCF] Loading Modules...")
 	for _, folder in SortedPairs(folders, true) do
 		if folder != "base" then
