@@ -1,6 +1,6 @@
 Config = {}
 -- IMPORTANT: MAKE SURE THIS NAME MATCHES UP WITH THE FOLDER NAME FOR THE GAMEMODE OR ELSE SHIT BREAKS
-Config["FolderName"] = "tcf_base"
+Config["FolderName"] = "tcf_base" -- Need to replace this.
 
 -- Configure the gamemode's basics here.
 Config["Team1Name"] = "team1"
